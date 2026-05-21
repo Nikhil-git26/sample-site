@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo "Starting AI-driven security scanning with Amazon Inspector..."
+      - # This downloads the official AWS Inspector scanning engine
+      - curl -O https://inspector-sbom-gen.s3.amazonaws.com/latest/linux/amd64/inspector-sbom-gen
+      - chmod +x inspector-sbom-gen
+      - ./inspector-sbom-gen directory --path . --output sbom.json
+      - echo "Scan complete. SBOM generated successfully."
+  build:
+    commands:
+      - echo "No compilation needed. Preparing to upload index.html..."
+artifacts:
+  files:
+    - index.html
