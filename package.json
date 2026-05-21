@@ -3,5 +3,9 @@
   "version": "1.0.0",
   "description": "Simple static page for AWS Inspector AI scanning",
   "main": "index.html",
-  "dependencies": {}
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {}
 }
